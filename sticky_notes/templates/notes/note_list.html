@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}All Notes{% endblock %}
+
+{% block content %}
+  <p><a href="{% url 'note_create' %}">+ New Note</a></p>
+
+  {% if notes %}
+
+    {% for note in notes %}
+      <div class="note-card">
+        <h3>
+          <a href="{% url 'note_detail' note.pk %}">
+            {{ note.title }}
+          </a>
+        </h3>
+
+        <p class="note-meta">
+          Updated: {{ note.updated_at }}
+        </p>
+
+        <p>
+          <a href="{% url 'note_update' note.pk %}">edit</a> |
+          <a href="{% url 'note_delete' note.pk %}">delete</a>
+        </p>
+      </div>
+    {% endfor %}
+
+  {% else %}
+    <p>No notes yet.</p>
+  {% endif %}
+{% endblock %}
