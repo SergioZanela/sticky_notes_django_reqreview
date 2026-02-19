@@ -1,1 +1,1 @@
-https://github.com/SergioZanela/sticky-notes-django.git
+https://github.com/SergioZanela/sticky_notes_django_reqreview.git
